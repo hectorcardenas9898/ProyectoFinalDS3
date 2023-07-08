@@ -25,9 +25,11 @@ public class Viaje {
 		return identificador;
 	}
 
-	public void insertarPasajero(){
-		pasajero = p;
-	}
+	/*
+	 * public void insertarPasajero(){
+	 * pasajero = p;
+	 * }
+	 */
 
 	public String getCiudadOrigen() {
 		return ciudadOrigen;
@@ -49,20 +51,17 @@ public class Viaje {
 		return numActualPasajeros;
 	}
 
-	public int getPasajero(){
-		pasajero = i;
-		return pasajero; 
-	}
+	/*
+	 * public int getPasajero(){
+	 * pasajero = i;
+	 * return pasajero;
+	 * }
+	 * 
+	 * public String getPasajero(){
+	 * pasajero = pasaporte;
+	 * return pasajero;
+	 * 
+	 * }
+	 */
 
-	public String getPasajero(){
-		pasajero = pasaporte;
-		return pasajero;
-
-	}
-
-
-	
-	
-	
-	
 }
