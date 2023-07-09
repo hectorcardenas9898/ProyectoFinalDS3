@@ -37,7 +37,7 @@ public class Viaje {
 			JOptionPane.showMessageDialog(null,"No se puede agregar más pasajeros, se alcanzó el número máximo");
         }
     }
-
+    
     public String getCiudadOrigen() {
         return ciudadOrigen;
     }
