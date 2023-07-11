@@ -1,6 +1,5 @@
 package proyectoFinalDSlll;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -8,7 +7,7 @@ public class Compañia {
 
 	private String nombre;
 	private List<Viaje> listaViajes;
-	private int numViaje;
+	private int numViaje = 0;
 	
 	public Compañia(String n) {
         this.nombre = n;
@@ -34,24 +33,22 @@ public class Compañia {
     }
 
     public Viaje getViaje(int i) {
-        if (i >= 0 && i < listaViajes.size()) {
+        if	(i >= 0 && i < listaViajes.size()) {
             return listaViajes.get(i);
         } else {
         	JOptionPane.showMessageDialog(null, "Índice fuera de rango");
         }
+		return null;
     }
 
     public Viaje getViaje(String id) {
         for (Viaje viaje : listaViajes) {
-            if (viaje.getId().equals(id)) {
+            if (viaje.getIdentificador().equals(id)) {
                 return viaje;
             }else {
             	JOptionPane.showMessageDialog(null, "Viaje no encontrado con el ID especificado");
             }
         }
-    }
-	
-	
-	
-	
+		return null;
+    }	
 }
