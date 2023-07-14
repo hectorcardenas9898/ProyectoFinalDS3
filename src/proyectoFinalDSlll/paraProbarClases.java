@@ -36,7 +36,18 @@ public class paraProbarClases {
     	double recursosPublicos;
 	    
     	
+    	identificador = JOptionPane.showInputDialog("Ingrese indentificación: ");
+    	ciudadOrigen = JOptionPane.showInputDialog("Ingrese indentificación: ");
+    	ciudadDestino = JOptionPane.showInputDialog("Ingrese indentificación: ");
+    	precio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese indentificación: "));
+    	numMaxPasajeros = Integer.parseInt(JOptionPane.showInputDialog("Ingrese precio del Viaje: "));
+    	numActualPasajeros = Integer.parseInt(JOptionPane.showInputDialog("Ingrese precio del Viaje: "));
     	
+    	
+    	Viaje viajes = new Viaje(identificador, ciudadOrigen, ciudadDestino, precio, numMaxPasajeros, numActualPasajeros, null);
+    	
+    	viajes.getIdentificador();
+    	viajes.insertarPasajero(null);
     	
     	
     	

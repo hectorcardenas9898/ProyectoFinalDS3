@@ -20,7 +20,7 @@ public class Pasajero {
 
 	}
 
-	public String getPasaporte() {
+	public int getPasaporte() {
 		return identificacion;
 	}
 
