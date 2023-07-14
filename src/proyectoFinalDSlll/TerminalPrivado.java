@@ -5,22 +5,23 @@ import java.util.List;
 
 public class TerminalPrivado extends Terminal {
 	
-	private List<Empresa> listaEmpresas;
+	private List<String> empresas;
     private int numEmpresa;
 	
-	public TerminalPrivado(String n, String c, String p) {
-		super(n, c, p);
+	public TerminalPrivado(String n, String c, String p, List<Compañia> co, List<String> e, int numEmpresa) {
+		super(n, c, p, co, numEmpresa);
+		this.empresas = e;
 	}
 	
-	public TerminalPrivado(String n, String c, String p, List<Compañia> co, List<Empresa> e, int numEmpresa) {
+	public TerminalPublico(String n, String c, String p, , , ) {
 		super(n, c, p, co);
-		this.listaEmpresas = new ArrayList<>();
+		this.empresas = new ArrayList<>();
         this.numEmpresa = numEmpresa;
 	}
 
     public void insertarEmpresas(Empresa empresa) {
         // Agregar la empresa al arreglo de empresas
-        listaEmpresas.add(empresa);
+        empresas.add(empresa);
         numEmpresa++;
     }
 
