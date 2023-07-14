@@ -1,6 +1,9 @@
 package proyectoFinalDSlll;
 
 import java.util.List;
+
+import javax.swing.JOptionPane;
+
 import java.util.ArrayList;
 
 public class Principal {
@@ -23,7 +26,7 @@ public class Principal {
     	double recursosPublicos;
     	
     	
-    	
+    	JOptionPane.showMessageDialog(null, "Bienvenido a la terminal de Pereira: "+"\n Seleccione una opción: ");
     	
     	//Inicializar arraylist de Pasajeros, viaje, empresa, compañia
     }

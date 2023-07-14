@@ -12,22 +12,10 @@ public class TerminalPrivado extends Terminal {
 		super(n, c, p, co, numEmpresa);
 		this.empresas = e;
 	}
-	
-	public TerminalPublico(String n, String c, String p, , , ) {
-		super(n, c, p, co);
-		this.empresas = new ArrayList<>();
-        this.numEmpresa = numEmpresa;
-	}
 
     public void insertarEmpresas(Empresa empresa) {
         // Agregar la empresa al arreglo de empresas
         empresas.add(empresa);
-        numEmpresa++;
-    }
-
-    public void insertarEmpresa(Empresa empresa) {
-        // Agregar la empresa al arreglo de empresas
-    	listaEmpresas.add(empresa);
         numEmpresa++;
     }
 
