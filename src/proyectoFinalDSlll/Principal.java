@@ -22,7 +22,7 @@ public class Principal {
     	int numEmpresa;
     	double recursosPublicos;
     	
-    	ArrayList<Pasajero> listaPasajero= new  ArrayList<Pasajero>();
+    	
     	
     	
     	//Inicializar arraylist de Pasajeros, viaje, empresa, compañia
