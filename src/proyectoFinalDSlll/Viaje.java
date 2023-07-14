@@ -25,7 +25,7 @@ public class Viaje {
         this.listaPasajeros = new ArrayList<>();
     }
 
-    public String getidentificador() {
+    public String getIdentificador() {
         return identificador;
     }
 
@@ -64,6 +64,7 @@ public class Viaje {
         } else {
             JOptionPane.showMessageDialog(null, "Índice fuera de rango");
         }
+		return null;
     }
 
     public Pasajero getPasajero(String pasaporte) {
@@ -74,5 +75,6 @@ public class Viaje {
             	JOptionPane.showMessageDialog(null, "No se encontró ningún pasajero con éste número de pasaporte");
             }
         }
+		return null;
     }
 }

@@ -17,7 +17,7 @@ public class Pasajero {
 		return nombre;
 	}
 
-	public String getIdentificacion() {
+	public String getPasaporte() {
 		return identificacion;
 	}
 
