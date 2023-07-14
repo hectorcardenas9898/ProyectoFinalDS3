@@ -14,8 +14,9 @@ public class Viaje {
     private int numActualPasajeros;
     private List<Pasajero> listaPasajeros;
 
-    public Viaje(String id, String ciudadO, String ciudadD, double precio, int numMaxPasajeros, int numActualPasajeros) {
-    	
+    public Viaje(String id, String ciudadO, String ciudadD, double precio, int numMaxPasajeros,
+            int numActualPasajeros) {
+
         this.identificador = id;
         this.ciudadOrigen = ciudadO;
         this.ciudadDestino = ciudadD;
@@ -34,10 +35,10 @@ public class Viaje {
             listaPasajeros.add(p);
             numActualPasajeros++;
         } else {
-			JOptionPane.showMessageDialog(null,"No se puede agregar más pasajeros, se alcanzó el número máximo");
+            JOptionPane.showMessageDialog(null, "No se puede agregar más pasajeros, se alcanzó el número máximo");
         }
     }
-    
+
     public String getCiudadOrigen() {
         return ciudadOrigen;
     }
@@ -59,22 +60,23 @@ public class Viaje {
     }
 
     public Pasajero getPasajero(int i) {
+
         if (i >= 0 && i < listaPasajeros.size()) {
             return listaPasajeros.get(i);
         } else {
             JOptionPane.showMessageDialog(null, "Índice fuera de rango");
         }
-		return null;
+        return null;
     }
 
     public Pasajero getPasajero(String pasaporte) {
         for (Pasajero pasajero : listaPasajeros) {
             if (pasajero.getPasaporte().equals(pasaporte)) {
                 return pasajero;
-            }else {
-            	JOptionPane.showMessageDialog(null, "No se encontró ningún pasajero con éste número de pasaporte");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró ningún pasajero con éste número de pasaporte");
             }
         }
-		return null;
+        return null;
     }
 }
