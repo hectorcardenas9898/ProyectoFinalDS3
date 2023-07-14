@@ -9,14 +9,14 @@ public class Compañia {
 	private List<Viaje> listaViajes;
 	private int numViaje = 0;
 	
-	public Compañia(String n) {
-        this.nombre = n;
+	public Compañia(String nombre) {
+        this.nombre = nombre;
     }
 
-    public Compañia(String n, List<Viaje> v) {
-        this.nombre = n;
-        this.listaViajes = v;
-        this.numViaje = listaViajes.size();
+    public Compañia(String nombre, List<Viaje> listaViajes, int numViaje) {
+        this.nombre = nombre;
+        this.listaViajes = listaViajes;
+        this.numViaje = numViaje;
     }
 
     public void insertarViaje(Viaje viaje) {

@@ -14,15 +14,15 @@ public class Viaje {
     private int numActualPasajeros;
     private List<Pasajero> listaPasajeros;
 
-    public Viaje(String id, String ciudadO, String ciudadD, double precio, int numMaxPasajeros, int numActualPasajeros) {
+    public Viaje(String identificador, String ciudadOrigen, String ciudadDestino, double precio, int numMaxPasajeros, int numActualPasajeros, List<Pasajero> listaPasajeros) {
     	
-        this.identificador = id;
-        this.ciudadOrigen = ciudadO;
-        this.ciudadDestino = ciudadD;
+        this.identificador = identificador;
+        this.ciudadOrigen = ciudadOrigen;
+        this.ciudadDestino = ciudadDestino;
         this.precio = precio;
         this.numMaxPasajeros = numMaxPasajeros;
         this.numActualPasajeros = numActualPasajeros;
-        this.listaPasajeros = new ArrayList<>();
+        this.listaPasajeros = listaPasajeros;
     }
 
     public String getIdentificador() {
@@ -67,9 +67,9 @@ public class Viaje {
 		return null;
     }
 
-    public Pasajero getPasajero(String pasaporte) {
+    public Pasajero getPasajero(String identificador) {
         for (Pasajero pasajero : listaPasajeros) {
-            if (pasajero.getPasaporte().equals(pasaporte)) {
+            if (pasajero.getPasaporte().equals(identificador)) {
                 return pasajero;
             }else {
             	JOptionPane.showMessageDialog(null, "No se encontró ningún pasajero con éste número de pasaporte");
