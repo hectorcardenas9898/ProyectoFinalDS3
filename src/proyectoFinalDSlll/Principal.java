@@ -79,7 +79,7 @@ public class Principal {
 		JOptionPane.showMessageDialog(null, " 1. Medellin " + "\n 2. Cali " + " \n 3. Bogota " + " \n 4. Manizales"
 				+ " \n 5. Cartagena " + "\n 6. Bucaramanga ");
 
-		int opc2 = Integer.parseInt(JOptionPane.showInputDialog(null, " ¿ Cuál es tu destiono a elegir ? "));
+		int opc2 = Integer.parseInt(JOptionPane.showInputDialog(null, " ¿ Cuál es tu destiono a elegir holaaaa ? "));
 
 	}
 }
