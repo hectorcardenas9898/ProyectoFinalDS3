@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class Viaje {
 
     private String identificador;
-    private String ciudadOrigen;
+    private String ciudadOrigen = "PEREIRA";
     private String ciudadDestino;
     private double precio;
     private int numMaxPasajeros;
@@ -26,10 +26,12 @@ public class Viaje {
         this.listaPasajeros = new ArrayList<>();
     }
 
+    // numero de viaje
     public String getIdentificador() {
         return identificador;
     }
 
+    // lista de pasajeros
     public void insertarPasajero(Pasajero p) {
         if (numActualPasajeros < numMaxPasajeros) {
             listaPasajeros.add(p);
@@ -70,13 +72,16 @@ public class Viaje {
     }
 
     public Pasajero getPasajero(String pasaporte) {
-        for (Pasajero pasajero : listaPasajeros) {
-            if (pasajero.getPasaporte().equals(pasaporte)) {
-                return pasajero;
-            } else {
-                JOptionPane.showMessageDialog(null, "No se encontró ningún pasajero con éste número de pasaporte");
-            }
-        }
+        /*
+         * for (Pasajero pasajero : listaPasajeros) {
+         * if (pasajero.getPasaporte().equals(pasaporte)) {
+         * return pasajero;
+         * } else {
+         * JOptionPane.showMessageDialog(null,
+         * "No se encontró ningún pasajero con éste número de pasaporte");
+         * }
+         * }
+         */
         return null;
     }
 }
