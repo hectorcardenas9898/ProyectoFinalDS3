@@ -7,19 +7,23 @@ import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
 public class Principal {
+	private static String ciudadDestino;
+
 	public static void main(String[] args) {
-
+		// Pasajero
 		String nombre;
-		int identificacion = 0;
+		String identificacion = "";
 		String nacionalidad;
-
-		String identificador;
+		// Viaje
 		String ciudadOrigen;
-		String ciudadDestino;
 		double precio = 0;
 		int numMaxPasajeros = 0;
 		int numActualPasajeros = 0;
 		int numViaje = 0;
+		Viaje listaViajes[]; // Instancia arreglo lista Viajes
+		// Pasajero listaPasajeros[];
+		int opc2;
+		// clase terminal
 		String ciudad;
 		String departamento;
 		int numCompañia;
@@ -27,87 +31,129 @@ public class Principal {
 		double recursosPublicos;
 
 		// Clase Pasajero
-		nombre = JOptionPane.showInputDialog(null, " Nombre completo del Pasajero ");
+		// List<Pasajero> listaPasajeros = new ArrayList<>();
+		List<String> listaPasajeros = new ArrayList<String>();
+		int resp = 0;
 
-		JOptionPane.showMessageDialog(null, " Indica tu tipo de documento ");
-		JOptionPane.showMessageDialog(null, " 1. Cedula " + "\n 2. Pasaporte " + " \n 3. Tarjeta de identidad ");
+		do {
+			JOptionPane.showMessageDialog(null, " Ingresa los datos ");
 
-		int opc = Integer.parseInt(JOptionPane.showInputDialog(null, " ¿ Que opcion deseas elegir ? "));
+			nombre = JOptionPane.showInputDialog(null, " Nombre completo del Pasajero ");
 
-		switch (opc) {
-			case 1:
+			JOptionPane.showMessageDialog(null, " Indica tu tipo de documento ");
+			JOptionPane.showMessageDialog(null, " 1. Cedula " + "\n 2. Pasaporte " + " \n 3. Tarjeta de identidad ");
 
-				identificacion = Integer.parseInt(JOptionPane.showInputDialog(null, " Escribe tu numero de cedula"));
+			int opc = Integer.parseInt(JOptionPane.showInputDialog(null, " ¿ Que opcion deseas elegir ? "));
 
-				break;
-			case 2:
+			switch (opc) {
+				case 1:
 
-				identificacion = Integer
-						.parseInt(JOptionPane.showInputDialog(null, " Escribe tu numero de Pasaporte "));
+					identificacion = JOptionPane.showInputDialog(null, " Escribe tu numero de cedula");
 
-				break;
-			case 3:
+					break;
+				case 2:
 
-				identificacion = Integer
-						.parseInt(JOptionPane.showInputDialog(null, " Escribe tu numero de Tarjeta de identidad "));
+					identificacion = JOptionPane.showInputDialog(null, " Escribe tu numero de Pasaporte ");
 
-				break;
+					break;
+				case 3:
 
-		}
+					identificacion = JOptionPane.showInputDialog(null, " Escribe tu numero de Tarjeta de identidad ");
 
-		nacionalidad = JOptionPane.showInputDialog(null, " Escribe la nacionalidad del pasajero ");
+					break;
 
-		Pasajero infoPasajeros = new Pasajero(nombre, identificacion, nacionalidad);
+				// listaPasajeros.add(Pasajero);
 
+			}
+			nacionalidad = JOptionPane.showInputDialog(null, " Escribe la nacionalidad del pasajero ");
+
+			listaPasajeros.add(nombre);
+			listaPasajeros.add(identificacion);
+			listaPasajeros.add(nacionalidad);
+
+			Pasajero infoPasajeros = new Pasajero(nombre, identificacion, nacionalidad);
+
+			resp = Integer.parseInt(
+					JOptionPane.showInputDialog(null, " Deseas seguir llenando datos del pasajero 1.Si / 2.No "));
+
+		} while (resp == 1);
+
+		// ------------------------------------------------------------------------------------------------------------------
 		// clase Viaje
-
-		Viaje classViaje = new Viaje(identificador, "Pereira", ciudadDestino, precio, numMaxPasajeros,
-				numActualPasajeros);
-
-		identificador = JOptionPane.showInputDialog(null,
-				" Estimada asesora Indica el numero de de ticket correspondiente ");
-
 		numMaxPasajeros = Integer.parseInt(JOptionPane.showInputDialog(" Indica el número maximo de pasajeros "));
 
 		numActualPasajeros = Integer
 				.parseInt(JOptionPane.showInputDialog(" Cantidad de pasajeros actuales para el viaje  "));
 
-		JOptionPane.showInternalMessageDialog(null, "La ciudad de origen es: " + classViaje.getCiudadOrigen());
+		opc2 = Integer.parseInt(JOptionPane.showInputDialog(null, " ¿ Cuantos destinos quieres visitar   ? "));
 
-		JOptionPane.showMessageDialog(null, " Indica tu ciudad Destino ");
+		listaViajes = new Viaje[opc2];
 
-		JOptionPane.showMessageDialog(null, " 1. Medellin " + "\n 2. Cali " + " \n 3. Bogota " + " \n 4. Manizales"
-				+ " \n 5. Cartagena " + "\n 6. Bucaramanga ");
+		for (int i = 0; i < opc2; i++) {
+			JOptionPane.showMessageDialog(null, " Indica tu ciudad Destino ");
 
-		int opc2 = Integer.parseInt(JOptionPane.showInputDialog(null, " ¿ Cuál es tu destiono a elegir  ? "));
+			JOptionPane.showMessageDialog(null, " A. Medellin " + "\n B. Cali " + " \n C. Bogota " + " \n D. Manizales"
+					+ " \n E. Cartagena " + "\n F. Bucaramanga ");
 
-		switch (opc2) {
-			case 1:
-				JOptionPane.showMessageDialog(null, " Haz seleccionado el destino hacia MEDELLÍN ");
+			String ciudadDestino = JOptionPane.showInputDialog(null, " ¿ Cuál es tu destiono a elegir  ? ");
 
-				break;
+			switch (ciudadDestino) {
+				case "A":
+					JOptionPane.showMessageDialog(null, " Haz elegido MEDELLÍN ");
+					JOptionPane.showMessageDialog(null, " Precios ");
+					JOptionPane.showMessageDialog(null, " 1. 65.000 " + "\n 85.000 ");
+					/* getprecio */ precio = Integer
+							.parseInt(JOptionPane.showInputDialog(null, " ¿ Que precio deseas elegir "));
 
-			case 2:
+					break;
+				case "B":
+					JOptionPane.showMessageDialog(null, " Haz elegido CALI ");
+					JOptionPane.showMessageDialog(null, " Precios ");
+					JOptionPane.showMessageDialog(null, " 1. 65.000 " + "\n 85.000 ");
+					/* getprecio */ precio = Integer
+							.parseInt(JOptionPane.showInputDialog(null, " ¿ Que precio deseas elegir "));
 
-				break;
+					break;
+				case "C":
+					JOptionPane.showMessageDialog(null, " Haz elegido BOGOTA ");
+					JOptionPane.showMessageDialog(null, " Precios ");
+					JOptionPane.showMessageDialog(null, " 1. 65.000 " + "\n 85.000 ");
+					/* getprecio */ precio = Integer
+							.parseInt(JOptionPane.showInputDialog(null, " ¿ Que precio deseas elegir "));
 
-			case 3:
+					break;
+				case "D":
+					JOptionPane.showMessageDialog(null, " Haz elegido MANIZALES ");
+					JOptionPane.showMessageDialog(null, " Precios ");
+					JOptionPane.showMessageDialog(null, " 1. 65.000 " + "\n 85.000 ");
+					/* getprecio */ precio = Integer
+							.parseInt(JOptionPane.showInputDialog(null, " ¿ Que precio deseas elegir "));
 
-				break;
+					break;
+				case "E":
+					JOptionPane.showMessageDialog(null, " Haz elegido CARTAGENA ");
+					JOptionPane.showMessageDialog(null, " Precios ");
+					JOptionPane.showMessageDialog(null, " 1. 65.000 " + "\n 85.000 ");
+					/* getprecio */ precio = Integer
+							.parseInt(JOptionPane.showInputDialog(null, " ¿ Que precio deseas elegir "));
+					break;
+				case "F":
+					JOptionPane.showMessageDialog(null, " Haz elegido BUCARAMANGA ");
+					JOptionPane.showMessageDialog(null, " Precios ");
+					JOptionPane.showMessageDialog(null, " 1. 65.000 " + "\n 85.000 ");
+					/* getprecio */ precio = Integer
+							.parseInt(JOptionPane.showInputDialog(null, " ¿ Que precio deseas elegir "));
+					break;
 
-			case 4:
-
-				break;
-
-			case 5:
-
-				break;
-
-			case 6:
-
-				break;
+			}
 
 		}
+
+		String identificador = JOptionPane.showInputDialog(null,
+				" Estimada asesora Indica el numero de de ticket correspondiente ");
+
+		Viaje classViaje = new Viaje(identificador, "Pereira", ciudadDestino, precio, numMaxPasajeros,
+				numActualPasajeros);
 
 	}
 }
