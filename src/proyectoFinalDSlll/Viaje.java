@@ -1,7 +1,6 @@
 package proyectoFinalDSlll;
 
 import java.util.ArrayList; 
-import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Viaje {
@@ -12,9 +11,9 @@ public class Viaje {
     private double precio;
     private int numMaxPasajeros;
     private int numActualPasajeros;
-    private List<Pasajero> listaPasajeros;
+    private ArrayList<Pasajero> listaPasajeros;
 
-    public Viaje(String identificador, String ciudadOrigen, String ciudadDestino, double precio, int numMaxPasajeros, int numActualPasajeros, List<Pasajero> listaPasajeros) {
+    public Viaje(String identificador, String ciudadOrigen, String ciudadDestino, double precio, int numMaxPasajeros, int numActualPasajeros) {
     	
         this.identificador = identificador;
         this.ciudadOrigen = ciudadOrigen;
@@ -22,7 +21,6 @@ public class Viaje {
         this.precio = precio;
         this.numMaxPasajeros = numMaxPasajeros;
         this.numActualPasajeros = numActualPasajeros;
-        this.listaPasajeros = listaPasajeros;
     }
 
     public String getIdentificador() {

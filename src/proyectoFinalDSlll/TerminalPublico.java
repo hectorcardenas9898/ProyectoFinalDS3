@@ -1,24 +1,24 @@
 package proyectoFinalDSlll;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class TerminalPublico extends Terminal{
 
 	private double recursosPublicos;
 	
-	public TerminalPublico(String n, String c, String p) {
-		super(n, c, p);
+	public TerminalPublico(String nombre, String ciudad, String departamento) {
+		super(nombre, ciudad, departamento);
 	}
 	
-	public TerminalPublico(String n, String c, String p, List<Compañia> co, double recu) {
-		super(n, c, p);
-		this.recursosPublicos = recu;
-		this.listaCompañias = co;
+	public TerminalPublico(String nombre, String ciudad, String departamento, ArrayList<Compañia> listaCompañias, double recursosPublicos) {
+		super(nombre, ciudad, departamento);
+		this.recursosPublicos = recursosPublicos;
+		this.listaCompañias = new ArrayList<>();
 	}
 	
-	public TerminalPublico(String n, String c, String p, double recu) {
-		super(n, c, p);
-		this.recursosPublicos = recu;
+	public TerminalPublico(String nombre, String ciudad, String departamento, double recursosPublicos) {
+		super(nombre, ciudad, departamento);
+		this.recursosPublicos = recursosPublicos;
 	}
 	
 	public double getRecursosPublicos() {

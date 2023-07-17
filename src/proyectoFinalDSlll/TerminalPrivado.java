@@ -1,25 +1,37 @@
 package proyectoFinalDSlll;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TerminalPrivado extends Terminal {
 	
-	private List<String> empresas;
+	private ArrayList<String> empresas;
     private int numEmpresa;
 	
-	public TerminalPrivado(String nombreT, String ciudad, String departamento, List<Compañia> co, List<String> e, int numEmpresa) {
-		super(nombreT, ciudad, departamento, co, numEmpresa);
-		this.empresas = e;
+	public TerminalPrivado(String nombreT, String ciudad, String departamento, ArrayList<Compañia> listaCompañias, ArrayList<String> empresas, int numEmpresa) {
+		super(nombreT, ciudad, departamento, listaCompañias, numEmpresa);
+		this.empresas = new ArrayList<>();
+		this.numEmpresa = numEmpresa;
+	}
+	
+	public int getNumEmpresas() {
+		return numEmpresa;
 	}
 
-    public void insertarEmpresas(String empresa) {
-        // Agregar la empresa al arreglo de empresas
-        empresas.add(empresa);
+    public void insertarEmpresa(String empresa) {
+        insertarEmpresa(empresa);
         numEmpresa++;
     }
 
     public String getEmpresas() {
+        String listaEmpresas = "";
+        for (int i = 0; i < empresas.size(); i++) {
+            listaEmpresas += empresas.get(i) + "\n";
+        }
+        return listaEmpresas;
+    }
+    
+    
+   /* public String getEmpresas() {
         // Construir una cadena con todas las empresas separadas por comas
         StringBuilder sb = new StringBuilder();
         for (Empresa empresa : listaEmpresas) {
@@ -30,7 +42,7 @@ public class TerminalPrivado extends Terminal {
             sb.delete(length - 2, length);  // Eliminar la última coma y espacio
         }
         return sb.toString();
-    }
+    }*/
 	
 	
 

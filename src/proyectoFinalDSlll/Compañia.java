@@ -1,21 +1,21 @@
 package proyectoFinalDSlll;
 
-import java.util.List; 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Compañia {
 
 	private String nombreC;
-	private List<Viaje> listaViajes;
+	private ArrayList<Viaje> listaViajes;
 	private int numViaje = 0;
 	
 	public Compañia(String nombre) {
         this.nombreC = nombre;
     }
 
-    public Compañia(String nombreC, List<Viaje> listaViajes, int numViaje) {
+    public Compañia(String nombreC, ArrayList<Viaje> listaViajes, int numViaje) {
         this.nombreC = nombreC;
-        this.listaViajes = listaViajes;
+        this.listaViajes = new ArrayList<>();
         this.numViaje = numViaje;
     }
 

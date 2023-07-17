@@ -9,7 +9,7 @@ public class Terminal {
 	private String nombreT;
     private String ciudad;
     private String departamento;
-    protected List<Compañia> listaCompañias;
+    protected ArrayList<Compañia> listaCompañias;
     private int numCompañia;
 
     public Terminal(String nombreT, String ciudad, String departamento) {
@@ -18,7 +18,7 @@ public class Terminal {
         this.departamento = departamento;
     }
 
-    public Terminal(String nombreT, String ciudad, String departamento, List<Compañia> co, int numCompania) {
+    public Terminal(String nombreT, String ciudad, String departamento, ArrayList<Compañia> listaCompañias, int numCompania) {
         this.nombreT = nombreT;
         this.ciudad = ciudad;
         this.departamento = departamento;
@@ -44,8 +44,8 @@ public class Terminal {
     }
     
     //Duda con el return
-    public Compañia obtenerCompañias() {
-        return (Compañia) listaCompañias;
+    public List<Compañia> obtenerCompañias() {
+        return listaCompañias;
     }
     
     /*public Compañia[] obtenerCompañias() {
@@ -73,4 +73,8 @@ public class Terminal {
         }
         return null;
     }
+    
+    public String mostrarDatosTerminales() {
+		return "nombre: "+nombreT+"\n Ciudad: "+ciudad+"\n Departamento: "+departamento;
+	}
 }
