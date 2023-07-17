@@ -1,12 +1,8 @@
 package proyectoFinalDSlll;
 
-import java.util.List;
-import javax.swing.JOptionPane;
-=======
 import java.util.List; 
->>>>>>> Stashed changes
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
@@ -39,5 +35,10 @@ public class Principal {
     	double recursosPublicos;
     	
     	
-}
+    	
+    	
+    	
+    	
+    	
+    }
 }

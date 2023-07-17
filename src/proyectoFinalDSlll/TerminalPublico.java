@@ -1,5 +1,7 @@
 package proyectoFinalDSlll;
 
+import java.util.List;
+
 public class TerminalPublico extends Terminal{
 
 	private double recursosPublicos;
@@ -8,9 +10,10 @@ public class TerminalPublico extends Terminal{
 		super(n, c, p);
 	}
 	
-	public TerminalPublico(String n, String c, String p, Compañia[] co, double recu) {
-		super(n, c, p, co);
+	public TerminalPublico(String n, String c, String p, List<Compañia> co, double recu) {
+		super(n, c, p);
 		this.recursosPublicos = recu;
+		this.listaCompañias = co;
 	}
 	
 	public TerminalPublico(String n, String c, String p, double recu) {

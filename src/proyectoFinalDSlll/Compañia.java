@@ -1,6 +1,6 @@
 package proyectoFinalDSlll;
 
-import java.util.List;
+import java.util.List; 
 import javax.swing.JOptionPane;
 
 public class Compañia {

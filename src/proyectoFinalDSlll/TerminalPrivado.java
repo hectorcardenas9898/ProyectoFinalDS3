@@ -13,7 +13,7 @@ public class TerminalPrivado extends Terminal {
 		this.empresas = e;
 	}
 
-    public void insertarEmpresas(Empresa empresa) {
+    public void insertarEmpresas(TerminalPrivado empresas) {
         // Agregar la empresa al arreglo de empresas
         empresas.add(empresa);
         numEmpresa++;

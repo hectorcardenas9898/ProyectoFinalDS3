@@ -9,7 +9,7 @@ public class Terminal {
 	private String nombre;
     private String ciudad;
     private String departamento;
-    private List<Compañia> listaCompañias;
+    protected List<Compañia> listaCompañias;
     private int numCompañia;
 
     public Terminal(String n, String c, String p) {
