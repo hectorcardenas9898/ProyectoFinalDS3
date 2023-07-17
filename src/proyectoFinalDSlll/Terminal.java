@@ -6,22 +6,22 @@ import javax.swing.JOptionPane;
 
 public class Terminal {
 
-	private String nombre;
+	private String nombreT;
     private String ciudad;
     private String departamento;
     protected List<Compañia> listaCompañias;
     private int numCompañia;
 
-    public Terminal(String n, String c, String p) {
-        this.nombre = n;
-        this.ciudad = c;
-        this.departamento = p;
+    public Terminal(String nombreT, String ciudad, String departamento) {
+        this.nombreT = nombreT;
+        this.ciudad = ciudad;
+        this.departamento = departamento;
     }
 
-    public Terminal(String n, String c, String p, List<Compañia> co, int numCompania) {
-        this.nombre = n;
-        this.ciudad = c;
-        this.departamento = p;
+    public Terminal(String nombreT, String ciudad, String departamento, List<Compañia> co, int numCompania) {
+        this.nombreT = nombreT;
+        this.ciudad = ciudad;
+        this.departamento = departamento;
         this.listaCompañias = new ArrayList<>();
         this.numCompañia = 0;
     }
@@ -32,14 +32,14 @@ public class Terminal {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombreT;
     }
 
     public String getCiudad() {
         return ciudad;
     }
 
-    public String getPais() {
+    public String getDepartamento() {
         return departamento;
     }
     

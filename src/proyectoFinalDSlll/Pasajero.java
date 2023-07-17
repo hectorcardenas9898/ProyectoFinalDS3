@@ -1,7 +1,5 @@
 package proyectoFinalDSlll;
 
-import javax.swing.JOptionPane;
-
 public class Pasajero {
 
 	private String nombre;

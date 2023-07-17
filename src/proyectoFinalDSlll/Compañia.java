@@ -5,16 +5,16 @@ import javax.swing.JOptionPane;
 
 public class Compañia {
 
-	private String nombre;
+	private String nombreC;
 	private List<Viaje> listaViajes;
 	private int numViaje = 0;
 	
 	public Compañia(String nombre) {
-        this.nombre = nombre;
+        this.nombreC = nombre;
     }
 
-    public Compañia(String nombre, List<Viaje> listaViajes, int numViaje) {
-        this.nombre = nombre;
+    public Compañia(String nombreC, List<Viaje> listaViajes, int numViaje) {
+        this.nombreC = nombreC;
         this.listaViajes = listaViajes;
         this.numViaje = numViaje;
     }
@@ -25,7 +25,7 @@ public class Compañia {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombreC;
     }
 
     public int getNumeroViaje() {

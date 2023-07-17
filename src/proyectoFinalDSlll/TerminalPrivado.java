@@ -8,12 +8,12 @@ public class TerminalPrivado extends Terminal {
 	private List<String> empresas;
     private int numEmpresa;
 	
-	public TerminalPrivado(String n, String c, String p, List<Compañia> co, List<String> e, int numEmpresa) {
-		super(n, c, p, co, numEmpresa);
+	public TerminalPrivado(String nombreT, String ciudad, String departamento, List<Compañia> co, List<String> e, int numEmpresa) {
+		super(nombreT, ciudad, departamento, co, numEmpresa);
 		this.empresas = e;
 	}
 
-    public void insertarEmpresas(TerminalPrivado empresas) {
+    public void insertarEmpresas(String empresa) {
         // Agregar la empresa al arreglo de empresas
         empresas.add(empresa);
         numEmpresa++;
