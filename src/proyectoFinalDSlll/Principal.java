@@ -44,15 +44,18 @@ public class Principal {
 		// Terminales y compañia
 
 		ArrayList<TerminalPublico> terminalesPublicos = Util.obtenerTerminalesPublicos();
-
-		// terminalesPublicos.get(1).getCompañia(0).getNombreC();
+		ArrayList<TerminalPrivado> terminalesPrivados = Util.obtenerTerminalesPrivados();
 
 		JOptionPane.showMessageDialog(null,
 				" ************************* \n" + " Destinos Disponibles \n" + "************************* \n");
 
-		JOptionPane.showMessageDialog(null, " Elegi la terminal que deseas \n" +
+		JOptionPane.showMessageDialog(null, " Elegi la terminal que deseas \n" + "--------------------------\n"
+				+ " Publicas \n"
+				+ "--------------------------\n" +
 				"A." + terminalesPublicos.get(0).getNombre() + "\nB." + terminalesPublicos.get(1).getNombre() + "\nC."
-				+ terminalesPublicos.get(2).getNombre());
+				+ terminalesPublicos.get(2).getNombre() + "\n--------------------------\n" + "Privadas \n"
+				+ "\n--------------------------\n" + "D" + terminalesPrivados.get(0).getNombre()
+				+ "\nE." + terminalesPrivados.get(1).getNombre() + "\n F." + terminalesPrivados.get(2).getNombre());
 		ciudadDestino = JOptionPane.showInputDialog(" Elige tu destino ");
 
 		switch (ciudadDestino) {
@@ -61,9 +64,12 @@ public class Principal {
 						" *************************************\n" + " Bienvenido a tu destino Cali \n"
 								+ " *************************************\n");
 				JOptionPane.showMessageDialog(null,
-						" Que Compañia deseas \n " + "A." + terminalesPublicos.get(0).getCompañia(0).getNombreC()
+						" Que Compañia deseas \n " + "PÚBLICAS\n" + "A."
+								+ terminalesPublicos.get(0).getCompañia(0).getNombreC()
 								+ "\n " + "B."
 								+ terminalesPublicos.get(0).getCompañia(1).getNombreC());
+				JOptionPane.showMessageDialog(null,
+						" Que Compañia deseas \n " + "PRIVADAS\n" + "A." + terminalesPrivados.get(0).getCompañia(3));
 
 				break;
 			case "B":

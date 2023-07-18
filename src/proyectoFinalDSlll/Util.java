@@ -43,7 +43,7 @@ public class Util {
 
         Compañia compania2T3 = new Compañia(" Bolivariano ", null);
 
-        companiasT2.add(compania2T3);
+        companiasT2.add(compania1T3);
         companiasT2.add(compania2T3);
 
         TerminalPublico terminal3 = new TerminalPublico("Terminal de Bogota", "Bogota", "Colombia", companiasT3,
@@ -53,5 +53,36 @@ public class Util {
 
         return terminalesPublicos;
 
+    }
+
+    public static ArrayList<TerminalPrivado> obtenerTerminalesPrivados() {
+        ArrayList<TerminalPrivado> terminalesPrivados = new ArrayList<TerminalPrivado>();
+
+        // TerminalP y compañia 1 posicion compañia 3 terminal 0
+        ArrayList<Compañia> companiasT1privado = new ArrayList<Compañia>();
+
+        Compañia compania1T1p = new Compañia("Expreso Alcala ", null);
+        companiasT1privado.add(compania1T1p);
+
+        TerminalPrivado terminal1priv = new TerminalPrivado(" Terminal privada de Cali", "Cali", "Colombia");
+        terminalesPrivados.add(terminal1priv);
+
+        ArrayList<Compañia> companiasT2privado = new ArrayList<Compañia>();
+
+        Compañia compania1T2 = new Compañia(" Expreso Antioquia ", null);
+        companiasT2privado.add(compania1T2);
+
+        TerminalPrivado terminal2priv = new TerminalPrivado("Terminal privada de Medellin", "Medellin", "Colombia");
+        terminalesPrivados.add(terminal2priv);
+
+        ArrayList<Compañia> companiasT3privado = new ArrayList<Compañia>();
+
+        Compañia compania1T3 = new Compañia(" Flota Occidental ", null);
+        companiasT3privado.add(compania1T3);
+
+        TerminalPrivado terminal3priv = new TerminalPrivado("Terminal privada de Bogota", "Bogota", "Colombia");
+        terminalesPrivados.add(terminal3priv);
+
+        return terminalesPrivados;
     }
 }
