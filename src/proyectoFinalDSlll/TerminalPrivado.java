@@ -8,7 +8,7 @@ public class TerminalPrivado extends Terminal {
     private List<String> empresas;
     // private int numEmpresa;
 
-    public TerminalPrivado(String n, String c, String p, List<Compañia> co, List<String> e, int numEmpresa) {
+    public TerminalPrivado(String n, String c, String p, ArrayList<Compañia> co, ArrayList<String> e, int numEmpresa) {
         super(n, c, p, co, numEmpresa);
         this.empresas = e;
     }

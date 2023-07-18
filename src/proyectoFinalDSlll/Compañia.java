@@ -10,11 +10,6 @@ public class Compañia {
     private List<Viaje> listaViajes;
     private int numViaje;
 
-    public Compañia(String nombreC, int numViaje) {
-        this.nombreC = nombreC;
-        this.numViaje = numViaje;
-    }
-
     public Compañia(String nombreC, Viaje[] listaViajes) {
         this.nombreC = nombreC;
         this.listaViajes = new ArrayList<>();

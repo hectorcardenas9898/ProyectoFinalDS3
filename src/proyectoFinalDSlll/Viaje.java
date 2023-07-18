@@ -13,12 +13,25 @@ public class Viaje {
     private int numMaxPasajeros;
     private int numActualPasajeros;
     public String[] listaViajes;
-    static ArrayList<Pasajero> listaPasajeros;
+    ArrayList<Pasajero> listaPasajeros;
 
-    public Viaje(String id, String ciudadO, String ciudadD, double precio, int numMaxPasajeros,
-            int numActualPasajeros) {
+    /*
+     * public Viaje(String id, String ciudadO, String ciudadD, double precio, int
+     * numMaxPasajeros,
+     * int numActualPasajeros) {
+     * 
+     * this.identificador = id;
+     * this.ciudadOrigen = ciudadO;
+     * this.ciudadDestino = ciudadD;
+     * this.precio = precio;
+     * this.numMaxPasajeros = numMaxPasajeros;
+     * this.numActualPasajeros = numActualPasajeros;
+     * this.listaPasajeros = new ArrayList<>();
+     * }
+     */
 
-        this.identificador = id;
+    public Viaje(int id, String ciudadO, String ciudadD, int precio, int numMaxPasajeros, int numActualPasajeros) {
+
         this.ciudadOrigen = ciudadO;
         this.ciudadDestino = ciudadD;
         this.precio = precio;
@@ -33,14 +46,20 @@ public class Viaje {
     }
 
     // lista de pasajeros
-    public void insertarPasajero(Pasajero identificacion) {
-        if (numActualPasajeros < numMaxPasajeros) {
-            listaPasajeros.add(identificacion);
-            JOptionPane.showMessageDialog(null, " Asientos disponibles ");
-            numActualPasajeros++;
+    public void insertarPasajero() {
+        if (listaPasajeros.size() < numMaxPasajeros) {
+            String nombre = JOptionPane.showInputDialog("Ingrese el nombre del pasajero");
+            String id = JOptionPane.showInputDialog("Ingrese la identificación del pasajero");
+            String nacionalidad = JOptionPane.showInputDialog("Ingrese la nacionalidad del pasajero");
+            Pasajero pasajero = new Pasajero(nombre, id, nacionalidad);
+
+            listaPasajeros.add(pasajero);
+
+            JOptionPane.showMessageDialog(null, "Pasajero agregado exitosamente.");
         } else {
-            JOptionPane.showMessageDialog(null, "No se puede agregar más pasajeros, se alcanzó el número máximo");
+            JOptionPane.showMessageDialog(null, "No hay cupo disponible en este viaje.");
         }
+
     }
 
     public String getCiudadOrigen() {
