@@ -6,23 +6,23 @@ import javax.swing.JOptionPane;
 
 public class Terminal {
 
-	private String nombre;
+    private String nombreC;
     private String ciudad;
     private String departamento;
     private List<Compañia> listaCompañias;
     private int numCompañia;
 
     public Terminal(String n, String c, String p) {
-        this.nombre = n;
+        this.nombreC = n;
         this.ciudad = c;
         this.departamento = p;
     }
 
     public Terminal(String n, String c, String p, List<Compañia> co, int numCompania) {
-        this.nombre = n;
+        this.nombreC = n;
         this.ciudad = c;
         this.departamento = p;
-        this.listaCompañias = new ArrayList<>();
+        this.listaCompañias = new ArrayList<Compañia>();
         this.numCompañia = 0;
     }
 
@@ -32,7 +32,7 @@ public class Terminal {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombreC;
     }
 
     public String getCiudad() {
@@ -42,15 +42,17 @@ public class Terminal {
     public String getPais() {
         return departamento;
     }
-    
-    //Duda con el return
+
+    // Duda con el return
     public Compañia obtenerCompañias() {
         return (Compañia) listaCompañias;
     }
-    
-    /*public Compañia[] obtenerCompañias() {
-        return listaCompañias.toArray(new Compañia[0]);
-    }*/
+
+    /*
+     * public Compañia[] obtenerCompañias() {
+     * return listaCompañias.toArray(new Compañia[0]);
+     * }
+     */
 
     public int getNumeroCompañia() {
         return numCompañia;
@@ -59,15 +61,15 @@ public class Terminal {
     public Compañia getCompañia(int i) {
         if (i >= 0 && i < numCompañia) {
             return listaCompañias.get(i);
-        }else {
-        	JOptionPane.showMessageDialog(null, "Indice fuera de rango");
+        } else {
+            JOptionPane.showMessageDialog(null, "Indice fuera de rango");
         }
-		return null;
+        return null;
     }
 
     public Compañia getCompañia(String nombre) {
         for (Compañia compañia : listaCompañias) {
-            if (compañia.getNombre().equals(nombre)) {
+            if (compañia.getNombreC().equals(nombre)) {
                 return compañia;
             }
         }

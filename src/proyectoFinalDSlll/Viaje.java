@@ -12,6 +12,7 @@ public class Viaje {
     private double precio;
     private int numMaxPasajeros;
     private int numActualPasajeros;
+    public String[] listaViajes;
     static ArrayList<Pasajero> listaPasajeros;
 
     public Viaje(String id, String ciudadO, String ciudadD, double precio, int numMaxPasajeros,
@@ -35,7 +36,7 @@ public class Viaje {
     public void insertarPasajero(Pasajero identificacion) {
         if (numActualPasajeros < numMaxPasajeros) {
             listaPasajeros.add(identificacion);
-
+            JOptionPane.showMessageDialog(null, " Asientos disponibles ");
             numActualPasajeros++;
         } else {
             JOptionPane.showMessageDialog(null, "No se puede agregar más pasajeros, se alcanzó el número máximo");
@@ -50,7 +51,7 @@ public class Viaje {
         return ciudadDestino;
     }
 
-    public double getPrecio() {
+    public double Precio() {
         return precio;
     }
 
@@ -75,7 +76,7 @@ public class Viaje {
     public Pasajero getPasajero(String identificacion) {
 
         for (Pasajero pasajero : listaPasajeros) {
-            if (pasajero.Identificacion().equals(getIdentificador())) {
+            if (pasajero.getIdentificacion().equals(getIdentificador())) {
                 return pasajero;
             } else {
                 JOptionPane.showMessageDialog(null,

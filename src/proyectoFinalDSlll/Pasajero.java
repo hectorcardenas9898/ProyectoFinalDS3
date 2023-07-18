@@ -15,17 +15,15 @@ public class Pasajero {
 		this.nacionalidad = nacionalidad;
 	}
 
-	public String Nombre() {
+	public String getNombre() {
 		return nombre;
-
 	}
 
-	public String Identificacion() {
+	public String getIdentificacion() {
 		return identificacion;
-
 	}
 
-	public String Nacionalidad() {
+	public String getNacionalidad() {
 		return nacionalidad;
 	}
 
