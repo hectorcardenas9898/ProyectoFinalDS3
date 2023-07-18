@@ -29,7 +29,7 @@ public class Util {
 
         Compañia compania2T2 = new Compañia(" TransArmenia ", null);
 
-        companiasT2.add(compania2T1);
+        companiasT2.add(compania1T2);
         companiasT2.add(compania2T2);
 
         TerminalPublico terminal2 = new TerminalPublico("Terminal de Medellin", "Medellin", "Colombia", companiasT2,

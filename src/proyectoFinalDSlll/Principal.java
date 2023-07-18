@@ -45,6 +45,8 @@ public class Principal {
 
 		ArrayList<TerminalPublico> terminalesPublicos = Util.obtenerTerminalesPublicos();
 
+		// terminalesPublicos.get(1).getCompañia(0).getNombreC();
+
 		JOptionPane.showMessageDialog(null,
 				" ************************* \n" + " Destinos Disponibles \n" + "************************* \n");
 
@@ -58,27 +60,31 @@ public class Principal {
 				JOptionPane.showMessageDialog(null,
 						" *************************************\n" + " Bienvenido a tu destino Cali \n"
 								+ " *************************************\n");
-				JOptionPane.showMessageDialog(null, " Precios " + "\n" +
-						" 1. 65.000 " + "\n 2. 85.000 ");
-				precio = Integer
-						.parseInt(JOptionPane.showInputDialog(null, " ¿ Que precio deseas elegir "));
+				JOptionPane.showMessageDialog(null,
+						" Que Compañia deseas \n " + "A." + terminalesPublicos.get(0).getCompañia(0).getNombreC()
+								+ "\n " + "B."
+								+ terminalesPublicos.get(0).getCompañia(1).getNombreC());
 
 				break;
 			case "B":
 				JOptionPane.showMessageDialog(null,
 						" *************************************\n" + " Bienvenido a tu destino Medellín \n"
 								+ " *************************************\n");
-				JOptionPane.showMessageDialog(null, " Precios " + " \n1. 65.000 " + "\n 2. 85.000 ");
-				precio = Integer
-						.parseInt(JOptionPane.showInputDialog(null, " ¿ Que precio deseas elegir "));
+				JOptionPane.showMessageDialog(null,
+						" Que Compañia deseas \n " + "A." + terminalesPublicos.get(1).getCompañia(0).getNombreC()
+								+ "\n " + "B.\n"
+								+ terminalesPublicos.get(1).getCompañia(1).getNombreC());
+
 				break;
 			case "C":
 				JOptionPane.showMessageDialog(null,
 						" *************************************\n" + " Bienvenido a tu destino Bogotá \n"
 								+ " *************************************\n");
-				JOptionPane.showMessageDialog(null, " Precios " + "\n 1. 65.000 " + "\n 2. 85.000 ");
-				precio = Integer
-						.parseInt(JOptionPane.showInputDialog(null, " ¿ Que precio deseas elegir "));
+				JOptionPane.showMessageDialog(null,
+						" Que Compañia deseas \n " + "A.\n" + terminalesPublicos.get(2).getCompañia(0).getNombreC()
+								+ "\n " + "B.\n"
+								+ terminalesPublicos.get(2).getCompañia(1).getNombreC());
+
 				break;
 
 		}

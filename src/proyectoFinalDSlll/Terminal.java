@@ -22,8 +22,8 @@ public class Terminal {
         this.nombreC = n;
         this.ciudad = c;
         this.departamento = p;
-        this.listaCompañias = new ArrayList<Compañia>();
-        this.numCompañia = 0;
+        this.listaCompañias = co;
+        this.numCompañia = numCompania;
     }
 
     public void InsertarCompañia(Compañia compañia) {
@@ -59,12 +59,7 @@ public class Terminal {
     }
 
     public Compañia getCompañia(int i) {
-        if (i >= 0 && i < numCompañia) {
-            return listaCompañias.get(i);
-        } else {
-            JOptionPane.showMessageDialog(null, "Indice fuera de rango");
-        }
-        return null;
+        return listaCompañias.get(i);
     }
 
     public Compañia getCompañia(String nombre) {
