@@ -39,7 +39,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		String opcTerminales, opcPrincipal, opcPrincipal1;
+		String opcTerminales, opcPrincipal, opcPrincipal1, patrocinios;
 		int RepMenu;
 
 		Viaje preciosViaje[] = new Viaje[10];
@@ -56,7 +56,7 @@ public class Principal {
 		preciosViaje[5] = new Viaje(12098, "Pereira", "Bogota", 120000, 2, 1);
 		preciosViaje[6] = new Viaje(12098, "Pereira ", "Cali", 80000, 2, 1);
 		preciosViaje[7] = new Viaje(12098, "Pereira", "Medellin", 90000, 2, 1);
-		preciosViaje[9] = new Viaje(12098, "Pereira", "Bogotá", 140000, 2, 1);
+		preciosViaje[8] = new Viaje(12098, "Pereira", "Bogotá", 140000, 2, 1);
 
 		// Es para llamar los datos del utilitario de estas terminales.
 		ArrayList<TerminalPublico> terminalesPublicos = Util.obtenerTerminalesPublicos();
@@ -71,11 +71,11 @@ public class Principal {
 
 		do {
 
-			JOptionPane.showMessageDialog(null,
-					" ***************************** \n" + "A. DESTINOS DISPONIBLES \n"
-							+ "B. TERMINALES GESTIONADAS  \n"
-							+ "***************************** \n");
-			opcPrincipal = JOptionPane.showInputDialog(" Elige la opcion que deseas visualizar ").toUpperCase();
+			opcPrincipal = JOptionPane.showInputDialog(" Elige la opcion que deseas visualizar \n" +
+					" ********************************** \n" + "A. DESTINOS DISPONIBLES \n"
+					+ "B. TERMINALES GESTIONADAS" + "\nC. PATROCINIOS TP\n"
+					+ "********************************** \n");
+
 			switch (opcPrincipal) {
 				case "A":
 
@@ -249,7 +249,8 @@ public class Principal {
 											+ terminalesPrivados.get(0).getCompañia(0).getNombreC());
 							JOptionPane.showMessageDialog(null,
 									" Haz elegido la compañia "
-											+ terminalesPrivados.get(0).getCompañia(0).getNombreC());
+											+ terminalesPrivados.get(0).getCompañia(0).getNombreC() + "con un valor de "
+											+ preciosViaje[6].Precio());
 							JOptionPane.showMessageDialog(null,
 									" Para finalizar con la compra Completa los siguientes datos ");
 							terminalesPublicos.get(2).getCompañia(0).getViaje(0).insertarPasajero();
@@ -266,10 +267,12 @@ public class Principal {
 											+ terminalesPrivados.get(1).getCompañia(0).getNombreC());
 							JOptionPane.showMessageDialog(null,
 									" Haz elegido la compañia "
-											+ terminalesPrivados.get(1).getCompañia(0).getNombreC());
+											+ terminalesPrivados.get(1).getCompañia(0).getNombreC() + "con un valor de "
+											+ preciosViaje[7].Precio());
 							JOptionPane.showMessageDialog(null,
 									" Para finalizar con la compra Completa los siguientes datos ");
 							terminalesPublicos.get(2).getCompañia(0).getViaje(0).insertarPasajero();
+
 							break;
 
 						case "F":
@@ -282,7 +285,8 @@ public class Principal {
 											+ terminalesPrivados.get(2).getCompañia(0).getNombreC());
 							JOptionPane.showMessageDialog(null,
 									" Haz elegido la compañia "
-											+ terminalesPrivados.get(2).getCompañia(0).getNombreC());
+											+ terminalesPrivados.get(2).getCompañia(0).getNombreC() + "con un valor de "
+											+ preciosViaje[8].Precio());
 							JOptionPane.showMessageDialog(null,
 									" Para finalizar con la compra Completa los siguientes datos ");
 							terminalesPublicos.get(2).getCompañia(0).getViaje(0).insertarPasajero();
@@ -332,7 +336,25 @@ public class Principal {
 											+ terminalesPublicos.get(2).getNumeroCompañia());
 							break;
 					}
-					// FALTA TERMINALES PRIVADAS
+
+					break;
+
+				case "C":
+					patrocinios = JOptionPane
+							.showInputDialog(" Seleccione el terminal del cual desea ver el patrocinio " +
+									"\n Terminales privadas\n" + "\n1." + terminalesPrivados.get(0).getNombre() + "\n2."
+									+ terminalesPrivados.get(1).getNombre() + "\n3."
+									+ terminalesPrivados.get(2).getNombre());
+					switch (patrocinios) {
+						case "1":
+							break;
+						case "2":
+							break;
+						case "3":
+							break;
+					}
+
+					break;
 
 			}
 
