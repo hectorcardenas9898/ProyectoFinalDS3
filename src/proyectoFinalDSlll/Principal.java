@@ -347,6 +347,9 @@ public class Principal {
 									+ terminalesPrivados.get(2).getNombre());
 					switch (patrocinios) {
 						case "1":
+							JOptionPane.showMessageDialog(null,
+									"PATROCINIOS DE LA TERMINAL" + terminalesPrivados.get(0).getCompañia(0));
+
 							break;
 						case "2":
 							break;
