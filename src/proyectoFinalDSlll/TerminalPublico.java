@@ -6,13 +6,6 @@ public class TerminalPublico extends Terminal {
 
 	private double recursosPublicos;
 
-	/*
-	 * mirar para eliminar
-	 * public TerminalPublico(String n, String c, String p) {
-	 * super(n, c, p);
-	 * }
-	 */
-
 	public TerminalPublico(String n, String c, String p, ArrayList<Compañia> co, double recu, int numCompania) {
 		super(n, c, p, co, numCompania);
 		this.recursosPublicos = recu;

@@ -1,8 +1,6 @@
 package proyectoFinalDSlll;
 
-import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 public class Terminal {
 
@@ -47,12 +45,6 @@ public class Terminal {
     public Compañia obtenerCompañias() {
         return (Compañia) listaCompañias;
     }
-
-    /*
-     * public Compañia[] obtenerCompañias() {
-     * return listaCompañias.toArray(new Compañia[0]);
-     * }
-     */
 
     public int getNumeroCompañia() {
         return numCompañia;

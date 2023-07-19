@@ -1,13 +1,9 @@
 package proyectoFinalDSlll;
 
-import java.util.List;
-
-import javax.print.attribute.standard.JobHoldUntil;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
 public class Principal {
-	private List<Terminal> terminales;
 
 	// Variables de la Clase Pasajero
 	String nombre;
@@ -100,11 +96,13 @@ public class Principal {
 						case "A":
 							JOptionPane.showMessageDialog(null,
 									" *************************************\n" + " Bienvenido a tu destino Cali \n"
-											+ " *************************************\n");
+											+ " De la ciudad " + terminalesPublicos.get(0).getCiudad() + " Del país de "
+											+ terminalesPublicos.get(0).getPais()
+											+ " \n*************************************\n");
 							JOptionPane.showMessageDialog(null,
 									" Que Compañia deseas \n " + "PÚBLICAS\n" + "A."
 											+ terminalesPublicos.get(0).getCompañia(0).getNombreC()
-											+ "\n " + "B."
+											+ "\nB."
 											+ terminalesPublicos.get(0).getCompañia(1).getNombreC());
 							opcTerminales = JOptionPane.showInputDialog(null, " ¿Con cual compañia deseas viajar ? ");
 							switch (opcTerminales) {
@@ -146,7 +144,9 @@ public class Principal {
 						case "B":
 							JOptionPane.showMessageDialog(null,
 									" *************************************\n" + " Bienvenido a tu destino Medellín \n"
-											+ " *************************************\n");
+											+ " De la ciudad " + terminalesPublicos.get(0).getCiudad() + " Del país de "
+											+ terminalesPublicos.get(0).getPais()
+											+ "\n *************************************\n");
 							JOptionPane.showMessageDialog(null,
 									" Que Compañia deseas \n " + "A."
 											+ terminalesPublicos.get(1).getCompañia(0).getNombreC()
@@ -193,7 +193,9 @@ public class Principal {
 						case "C":
 							JOptionPane.showMessageDialog(null,
 									" *************************************\n" + " Bienvenido a tu destino Bogotá \n"
-											+ " *************************************\n");
+											+ " De la ciudad " + terminalesPublicos.get(0).getCiudad() + " Del país de "
+											+ terminalesPublicos.get(0).getPais()
+											+ " \n*************************************\n");
 							JOptionPane.showMessageDialog(null,
 									" Que Compañia deseas \n " + "A.\n"
 											+ terminalesPublicos.get(2).getCompañia(0).getNombreC()
@@ -243,7 +245,9 @@ public class Principal {
 							JOptionPane.showMessageDialog(null,
 									" *****************************************\n"
 											+ " Bienvenido a tu Terminal Privada de Calí \n"
-											+ " ****************************************\n");
+											+ " De la ciudad " + terminalesPublicos.get(0).getCiudad() + " Del país de "
+											+ terminalesPublicos.get(0).getPais()
+											+ "\n ****************************************\n");
 							JOptionPane.showMessageDialog(null,
 									" COMPAÑIA DISPONIBLE: \n " + "A."
 											+ terminalesPrivados.get(0).getCompañia(0).getNombreC());
@@ -261,7 +265,9 @@ public class Principal {
 							JOptionPane.showMessageDialog(null,
 									" ****************************************\n"
 											+ " Bienvenido a tu Terminal Privada de Medellín \n"
-											+ " ****************************************\n");
+											+ " De la ciudad " + terminalesPublicos.get(1).getCiudad() + " Del país de "
+											+ terminalesPublicos.get(0).getPais()
+											+ " \n****************************************\n");
 							JOptionPane.showMessageDialog(null,
 									" COMPAÑIA DISPONIBLE: \n " + "A."
 											+ terminalesPrivados.get(1).getCompañia(0).getNombreC());
@@ -278,8 +284,10 @@ public class Principal {
 						case "F":
 							JOptionPane.showMessageDialog(null,
 									" ****************************************\n"
-											+ " Bienvenido a tu Terminal Privada de Bogotá \n"
-											+ " ****************************************\n");
+											+ " Bienvenido a tu Terminal Privada de Bogotá \n" + " De la ciudad "
+											+ terminalesPublicos.get(2).getCiudad() + " Del país de "
+											+ terminalesPublicos.get(0).getPais()
+											+ "\n ****************************************\n");
 							JOptionPane.showMessageDialog(null,
 									" COMPAÑIA DISPONIBLE: \n " + "A."
 											+ terminalesPrivados.get(2).getCompañia(0).getNombreC());
@@ -348,12 +356,16 @@ public class Principal {
 					switch (patrocinios) {
 						case "1":
 							JOptionPane.showMessageDialog(null,
-									"PATROCINIOS DE LA TERMINAL" + terminalesPrivados.get(0).getCompañia(0));
+									"PATROCINIOS DE LA TERMINAL\n" + terminalesPrivados.get(0).getEmpresas());
 
 							break;
 						case "2":
+							JOptionPane.showMessageDialog(null,
+									"PATROCINIOS DE LA TERMINAL\n" + terminalesPrivados.get(1).getEmpresas());
 							break;
 						case "3":
+							JOptionPane.showMessageDialog(null,
+									"PATROCINIOS DE LA TERMINAL\n" + terminalesPrivados.get(2).getEmpresas());
 							break;
 					}
 
