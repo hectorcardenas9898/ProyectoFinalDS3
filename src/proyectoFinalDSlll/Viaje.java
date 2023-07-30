@@ -1,22 +1,21 @@
 package proyectoFinalDSlll;
 
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Viaje {
 
     private String identificador;
-    private String ciudadOrigen;
+    private String ciudadOrigen = "PEREIRA";
     private String ciudadDestino;
     private double precio;
     private int numMaxPasajeros;
     private int numActualPasajeros;
-    private List<Pasajero> listaPasajeros;
+    public String[] listaViajes;
+    ArrayList<Pasajero> listaPasajeros;
 
-    public Viaje(String id, String ciudadO, String ciudadD, double precio, int numMaxPasajeros, int numActualPasajeros) {
-    	
-        this.identificador = id;
+    public Viaje(int id, String ciudadO, String ciudadD, int precio, int numMaxPasajeros, int numActualPasajeros) {
+
         this.ciudadOrigen = ciudadO;
         this.ciudadDestino = ciudadD;
         this.precio = precio;
@@ -25,19 +24,28 @@ public class Viaje {
         this.listaPasajeros = new ArrayList<>();
     }
 
+    // numero de viaje
     public String getIdentificador() {
         return identificador;
     }
 
-    public void insertarPasajero(Pasajero p) {
-        if (numActualPasajeros < numMaxPasajeros) {
-            listaPasajeros.add(p);
-            numActualPasajeros++;
+    // lista de pasajeros
+    public void insertarPasajero() {
+        if (listaPasajeros.size() < numMaxPasajeros) {
+            String nombre = JOptionPane.showInputDialog("Ingrese el nombre del pasajero");
+            String id = JOptionPane.showInputDialog("Ingrese la identificación del pasajero");
+            String nacionalidad = JOptionPane.showInputDialog("Ingrese la nacionalidad del pasajero");
+            Pasajero pasajero = new Pasajero(nombre, id, nacionalidad);
+
+            listaPasajeros.add(pasajero);
+
+            JOptionPane.showMessageDialog(null, "Pasajero agregado exitosamente.");
         } else {
-			JOptionPane.showMessageDialog(null,"No se puede agregar más pasajeros, se alcanzó el número máximo");
+            JOptionPane.showMessageDialog(null, "No hay cupo disponible en este viaje.");
         }
+
     }
-    
+
     public String getCiudadOrigen() {
         return ciudadOrigen;
     }
@@ -46,7 +54,7 @@ public class Viaje {
         return ciudadDestino;
     }
 
-    public double getPrecio() {
+    public double Precio() {
         return precio;
     }
 
@@ -59,22 +67,26 @@ public class Viaje {
     }
 
     public Pasajero getPasajero(int i) {
+
         if (i >= 0 && i < listaPasajeros.size()) {
             return listaPasajeros.get(i);
         } else {
             JOptionPane.showMessageDialog(null, "Índice fuera de rango");
         }
-		return null;
+        return null;
     }
 
-    public Pasajero getPasajero(String pasaporte) {
+    public Pasajero getPasajero(String identificacion) {
+
         for (Pasajero pasajero : listaPasajeros) {
-            if (pasajero.getPasaporte().equals(pasaporte)) {
+            if (pasajero.getIdentificacion().equals(getIdentificador())) {
                 return pasajero;
-            }else {
-            	JOptionPane.showMessageDialog(null, "No se encontró ningún pasajero con éste número de pasaporte");
+            } else {
+                JOptionPane.showMessageDialog(null,
+                        "No se encontró ningún pasajero con éste número de pasaporte");
             }
         }
-		return null;
+
+        return null;
     }
 }

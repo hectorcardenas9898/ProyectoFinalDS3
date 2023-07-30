@@ -5,27 +5,24 @@ public class Pasajero {
 	private String nombre;
 	private String identificacion;
 	private String nacionalidad;
-	
-	public Pasajero(String n, String p, String nacio) {
-	
-		this.nombre = n;
-		this.identificacion = p;
-		this.nacionalidad = nacio;
+
+	public Pasajero(String nombre, String identificacion, String nacionalidad) {
+
+		this.nombre = nombre;
+		this.identificacion = identificacion;
+		this.nacionalidad = nacionalidad;
 	}
 
 	public String getNombre() {
 		return nombre;
 	}
 
-	public String getPasaporte() {
+	public String getIdentificacion() {
 		return identificacion;
 	}
 
 	public String getNacionalidad() {
 		return nacionalidad;
 	}
-	
-	
-	
-	
+
 }
